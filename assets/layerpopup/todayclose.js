@@ -3,7 +3,7 @@ var $layerPopup = document.querySelector('#layerPopupBox');
 var $btnLayerPopupClose = document.querySelector('.layerPopupClose .btnClose');
 var $btnLayerPopupTodayHide = document.querySelector('.layerPopupClose .btnTodayHide');
 
-//최초 레이어팝업 노출 (testPopupClose라는 이름의 쿠키가 존재하지 않으면 레이어 노출)
+//최초 레이어팝업 노출 (todayPopupClose라는 이름의 쿠키가 존재하지 않으면 레이어 노출)
 if(!$.cookie('todayPopupClose')){
     layerPopupShow();
 }
@@ -29,13 +29,13 @@ function layerPopupHide(state){
 
         //오늘하루보지않기 버튼을 누른 경우
         if(state === 1){
-            //'testCookie' 이름의 쿠키가 있는지 체크한다.
+            //'todayPopupClose' 이름의 쿠키가 있는지 체크한다.
                 if($.cookie('todayPopupClose') == undefined){
-                        //쿠키가 없는 경우 testCookie 쿠키를 추가
-                        $.cookie('todayPopupClose', 'true', { expires: 1, path: '/' });
+                        //쿠키가 없는 경우 todayPopupClose 쿠키를 추가
+                        $.cookie('todayPopupClose', 'Y', { expires: 1, path: '/' });
                         /**
                                 설명 :
-                                임의로 testCookie라는 이름에 Y라는 값을 넣어주었고,
+                                임의로 todayPopupClose라는 이름에 Y라는 값을 넣어주었고,
                                 expires값으로 1을 주어 1일 후 쿠키가 삭제되도록 하였다.
                                 path값을 '/'로 주면 해당사이트 모든페이지에서 유효한 쿠키를 생성한다.
                                 특정페이지에서만 작동하려면 페이지 경로를 작성하면 된다.
