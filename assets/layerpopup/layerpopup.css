@@ -7,7 +7,7 @@ img{
   -webkit-user-drag: none;
 }
 
-  .layerPopup {
+  #layerPopupBox {
     position: absolute;
     top: 70px;
     left: 70px;
@@ -88,7 +88,7 @@ img{
   }
 
 
-  .layerPopup > div > a {
+  #layerPopupBox > div > a {
     display: inline-block;
     flex-direction: row;
     justify-content: center;
@@ -106,18 +106,18 @@ img{
     color : #828282;
   }
 
-.layerPopup > div > a:nth-child(1),
-.layerPopup > div > a:nth-child(2) {
+#layerPopupBox > div > a:nth-child(1),
+#layerPopupBox > div > a:nth-child(2) {
   border-right: solid 1px #ccc;
 }
 
 
-  .layerPopup > div > a:hover {
+  #layerPopupBox > div > a:hover {
     background: #fff;
     color: #231f20;
   }
 
-  .layerPopup > div > a:active {
+  #layerPopupBox > div > a:active {
     /* top: 1px; */
     background: #231f20;
     color : #fff;
