@@ -1,30 +1,56 @@
 /* Javascript */
 	
+
 //popup하단리스트 체크확인
 
-$(document).ready(function () {
 
+$(document).ready(function () {
 
         $(".slide-bot").children("a:eq(0)").click(function () {
                 $(".slide-bot").children().removeClass("c-on");
                 $(".slide-bot").children("a:eq(0)").addClass("c-on");
+
+				$("#content1").css("left", 0);
+				$("#content2").css("left", 450);
+				$("#content3").css("left", 900);
         });
 
         $(".slide-bot").children("a:eq(1)").click(function () {
                 $(".slide-bot").children().removeClass("c-on");
                 $(".slide-bot").children("a:eq(1)").addClass("c-on");
+
+				$("#content1").css("left", -450);
+				$("#content2").css("left", 0);
+				$("#content3").css("left", 450);
         });
 
         $(".slide-bot").children("a:eq(2)").click(function () {
                 $(".slide-bot").children().removeClass("c-on");
                 $(".slide-bot").children("a:eq(2)").addClass("c-on");
+
+				$("#content1").css("left", -900);
+				$("#content2").css("left", -450);
+				$("#content3").css("left", 0);
         });
-
-
 });
 
 
 
+
+
+var banner_left = 0;
+var img_cnt = 0;
+
+$(document).ready(function() {
+	$(".slides a").each(function() {
+		$(this).css("left", banner_left);
+		banner_left += $(this).width();
+		$(this).attr("id", "content"+(++img_cnt));
+	});
+
+
+
+	
 
 // 오늘하루열지않음
 
@@ -75,3 +101,4 @@ function layerPopupHide(state){
 				}        
 		}
 }
+});
